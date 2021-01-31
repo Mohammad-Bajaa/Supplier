@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Supplier.Models.CategoryProduct>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/NavbarAdmin.cshtml";
+}
+
+<h1>Category to Product</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Name)
+            </td>
+            <td>
+             
+                @Html.ActionLink("Delete", "Delete", new { CategoryId = item.CategoryId, ProductId = item.ProductId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
