@@ -79,7 +79,7 @@ namespace Supplier.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new Admin { UserName = Input.Email, Email = Input.Email, firstname = Input.FirstName };
+                var user = new Admin { UserName = Input.Email, Email = Input.Email, Firstname = Input.FirstName };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

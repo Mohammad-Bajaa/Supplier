@@ -12,7 +12,7 @@ namespace Supplier.Areas.Identity.Data
     {
         [PersonalData]
         [Column(TypeName= "nvarchar(100)")]
-        public string firstname { get; set; }
+        public string Firstname { get; set; }
 
     }
 }
