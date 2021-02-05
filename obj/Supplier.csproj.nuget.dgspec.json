@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\Downloads\\Telegram Desktop\\webPro\\Supplier\\Supplier\\Supplier.csproj": {}
+    "D:\\githup\\Supplier\\Supplier.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\Downloads\\Telegram Desktop\\webPro\\Supplier\\Supplier\\Supplier.csproj": {
+    "D:\\githup\\Supplier\\Supplier.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Downloads\\Telegram Desktop\\webPro\\Supplier\\Supplier\\Supplier.csproj",
+        "projectUniqueName": "D:\\githup\\Supplier\\Supplier.csproj",
         "projectName": "Supplier",
-        "projectPath": "C:\\Users\\ASUS\\Downloads\\Telegram Desktop\\webPro\\Supplier\\Supplier\\Supplier.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Downloads\\Telegram Desktop\\webPro\\Supplier\\Supplier\\obj\\",
+        "projectPath": "D:\\githup\\Supplier\\Supplier.csproj",
+        "packagesPath": "C:\\Users\\Farouq\\.nuget\\packages\\",
+        "outputPath": "D:\\githup\\Supplier\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Farouq\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

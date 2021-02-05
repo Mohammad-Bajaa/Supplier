@@ -173,6 +173,9 @@ namespace Supplier.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Firstname")
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -205,9 +208,6 @@ namespace Supplier.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
-
-                    b.Property<string>("firstname")
-                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 

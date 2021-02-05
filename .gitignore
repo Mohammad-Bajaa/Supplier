@@ -7,3 +7,13 @@ bin/Debug/netcoreapp3.1/Supplier.pdb
 bin/Debug/netcoreapp3.1/Supplier.Views.pdb
 *.dll
 *.pdb
+*.json
+*.dll
+*.pdb
+*.xml
+Migrations/20210205144834_sup.cs
+Migrations/20210205144834_sup.Designer.cs
+Migrations/SupplierDb/20210205143443_sup.cs
+Migrations/SupplierDb/20210205144745_sup1.cs
+Migrations/SupplierDb/20210205143443_sup.Designer.cs
+Migrations/SupplierDb/20210205144745_sup1.Designer.cs
