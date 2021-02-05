@@ -31,8 +31,8 @@ namespace Supplier.Controllers
 
 
 
-            var user = _adminContext.Users.FirstOrDefault(m => m.Id == GetUserId());
-            ViewData["UserFirstName"] = user.firstname;
+            var user = _adminContext.Admins.FirstOrDefault(m => m.Id == GetUserId());
+            ViewData["UserFirstName"] = user.Firstname;
             //ViewData["LastName"] = user.LastName;
 
             return View();
