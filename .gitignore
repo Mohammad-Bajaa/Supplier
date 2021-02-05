@@ -17,3 +17,4 @@ Migrations/SupplierDb/20210205143443_sup.cs
 Migrations/SupplierDb/20210205144745_sup1.cs
 Migrations/SupplierDb/20210205143443_sup.Designer.cs
 Migrations/SupplierDb/20210205144745_sup1.Designer.cs
+*.json
