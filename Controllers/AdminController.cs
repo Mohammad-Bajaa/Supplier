@@ -30,10 +30,14 @@ namespace Supplier.Controllers
         {
 
 
+            var CurrUserId = GetUserId();
+            if (CurrUserId != null)
+            {
+                var user = _adminContext.Admins.FirstOrDefault(m => m.Id == GetUserId());
+                ViewData["UserFirstName"] = user.Firstname;
+                //ViewData["LastName"] = user.LastName;
+            }
 
-            var user = _adminContext.Admins.FirstOrDefault(m => m.Id == GetUserId());
-            ViewData["UserFirstName"] = user.Firstname;
-            //ViewData["LastName"] = user.LastName;
 
             return View();
         }
