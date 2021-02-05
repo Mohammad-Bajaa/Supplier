@@ -10,9 +10,11 @@
     <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="offset-1">
-
+            <div class="login-form-icon offset-md-3" style="margin-top: 12px">
+                <i class="fas fa-user-circle fa-9x text-secondary"></i>
+            </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-11">
                     <div class="form-group">
                         <label asp-for="Input.FirstName"></label>
                         <input asp-for="Input.FirstName" class="form-control" />
@@ -21,7 +23,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-11">
                     <div class="form-group">
                         <label asp-for="Input.Email"></label>
                         <input asp-for="Input.Email" class="form-control" />
@@ -32,7 +34,7 @@
 
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-11">
                     <div class="form-group">
                         <label asp-for="Input.Password"></label>
                         <input asp-for="Input.Password" class="form-control" />
@@ -42,7 +44,7 @@
 
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-11">
                     <div class="form-group">
                         <label asp-for="Input.ConfirmPassword"></label>
                         <input asp-for="Input.ConfirmPassword" class="form-control" />
@@ -51,7 +53,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary" style="margin-bottom: 30px;margin-top: 30px;">Register</button>
         </div>
         
 
