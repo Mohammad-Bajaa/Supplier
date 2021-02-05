@@ -4,9 +4,6 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/NavbarAdmin.cshtml";
 }
-
-<h1>Products Specifications</h1>
-
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -15,13 +12,13 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.name)
+                    Specification
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.value)
+                    Description
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Product)
+                    @Html.DisplayNameFor(model => model.Product.Name)
                 </th>
                 <th></th>
             </tr>
@@ -37,7 +34,7 @@
                         @Html.DisplayFor(modelItem => item.value)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Product.Id)
+                        @Html.DisplayFor(modelItem => item.Product.Name)
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
