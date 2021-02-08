@@ -17,9 +17,9 @@
                     Description
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Product.Name)
+                    Product
                 </th>
-                <th></th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -36,9 +36,15 @@
                         @Html.DisplayFor(modelItem => item.Product.Name)
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id">
+                            <i class="far fa-edit fa-lg text-dark"></i><!--For Edit-->
+                        </a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">
+                            <i style="color:blue;" class="far fa-lg fa-question-circle"></i><!--For Details-->
+                        </a>  |
+                        <a asp-action="Delete" asp-route-id="@item.Id">
+                            <i class="far fa-trash-alt fa-lg text-danger"></i><!--For Delete-->
+                        </a> 
                     </td>
                 </tr>
             }
