@@ -1,23 +1,22 @@
 ﻿@model IEnumerable<Supplier.Models.Category>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Categories";
     Layout = "~/Views/Shared/NavbarAdmin.cshtml";}
 
-    <h1>Category</h1>
 
 <p>
-    <a asp-action="Create">Create New Category</a>
+    <a class="btn btn-primary" asp-action="Create">Create New Category</a>
 </p>
 <div id="dataDiv" style=" margin-left:10px; padding:5px;">
     <table id="customerDatatable" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0">
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Name)
+                    Category Name
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Description)
+                    Description
                 </th>
 
                 <th></th>
@@ -37,7 +36,11 @@
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                         <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                        <a asp-action="CreateWithCategoryId" asp-controller="CategoryProducts" asp-route-id="@item.Id">Add Product</a> |
+                        <a asp-action="Create" asp-controller="Product" asp-route-id="@item.Id">Show Products</a> |
+                        <a asp-action="Create" asp-controller="CategorySpecifications" asp-route-id="@item.Id">Add Specification</a> |
+                        <a asp-action="IndexForId" asp-controller="CategorySpecifications" asp-route-id="@item.Id">Show Specifications</a>
                     </td>
                 </tr>
             }

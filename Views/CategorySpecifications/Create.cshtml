@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/NavbarAdmin.cshtml";
 }
 
-    <h4>Creating a new Category-Specification:</h4>
+    <h4>Creating a new Category Specification:</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -22,8 +22,8 @@
                 </label>
             </div>
             <div class="form-group">
-                <label asp-for="CategoryId" class="control-label">Category Name:</label>
-                <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
+                <!--<label asp-for="CategoryId" class="control-label">Category Name:</label>-->
+                <input hidden asp-for="CategoryId" class ="form-control"></input>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

@@ -28,6 +28,15 @@ namespace Supplier.Controllers
             return View(await supplierDbContext.ToListAsync());
         }
 
+        [AllowAnonymous]
+        public async Task<IActionResult> IndexForId(int id)
+        {
+            var supplierDbContext = _context.CategorySpecifications.Where(p => p.CategoryId == id);
+            supplierDbContext = supplierDbContext.Include(m => m.Category);
+            //return RedirectToAction("Index", "ProductSpecifications");
+            return View("Index", await supplierDbContext.ToListAsync());
+        }
+
         // GET: CategorySpecifications/Details/5
         [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
@@ -49,10 +58,18 @@ namespace Supplier.Controllers
         }
 
         // GET: CategorySpecifications/Create
-        public IActionResult Create()
+        /*public IActionResult Create()
         {
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
             return View();
+        }*/
+
+        public IActionResult Create(int id)
+        {
+            var x = new CategorySpecification();
+            x.CategoryId = id;
+            ViewData["CategoryId"] = _context.Categories.FirstOrDefault(m => m.Id == id).Id;
+            return View(x);
         }
 
         // POST: CategorySpecifications/Create
@@ -64,9 +81,10 @@ namespace Supplier.Controllers
         {
             if (ModelState.IsValid)
             {
+                categorySpecification.Id = 0;
                 _context.Add(categorySpecification);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Categories");
             }
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Id", categorySpecification.CategoryId);
             return View(categorySpecification);
@@ -88,7 +106,7 @@ namespace Supplier.Controllers
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", categorySpecification.CategoryId);
             return View(categorySpecification);
         }
-
+              
         // POST: CategorySpecifications/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]

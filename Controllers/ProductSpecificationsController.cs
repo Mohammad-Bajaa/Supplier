@@ -27,6 +27,15 @@ namespace Supplier.Controllers
             var supplierDbContext = _context.ProductSpecifications.Include(p => p.Product);
             return View(await supplierDbContext.ToListAsync());
         }
+        [AllowAnonymous]
+        public async Task<IActionResult> IndexForId(int id)
+        {
+            
+            var supplierDbContext = _context.ProductSpecifications.Where(p => p.Product.Id == id);
+            supplierDbContext = supplierDbContext.Include(m=> m.Product);
+            //return RedirectToAction("Index", "ProductSpecifications");
+            return View("Index",await supplierDbContext.ToListAsync());
+        }
 
         // GET: ProductSpecifications/Details/5
         [AllowAnonymous]
@@ -49,10 +58,12 @@ namespace Supplier.Controllers
         }
 
         // GET: ProductSpecifications/Create
-        public IActionResult Create()
+        public IActionResult Create(int id)
         {
-            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Name");
-            return View();
+            var x = new ProductSpecification();
+            x.ProductId = id;
+            ViewData["ProductId"] = _context.Products.FirstOrDefault(m=>m.Id==id).Id;
+            return View(x);
         }
 
         // POST: ProductSpecifications/Create
@@ -64,12 +75,14 @@ namespace Supplier.Controllers
         {
             if (ModelState.IsValid)
             {
+                productSpecification.Id = 0;
                 _context.Add(productSpecification);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Products");
             }
             ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id", productSpecification.ProductId);
-            return View(productSpecification);
+            return RedirectToAction("Index","Products");
+                //View(productSpecification);
         }
 
         // GET: ProductSpecifications/Edit/5

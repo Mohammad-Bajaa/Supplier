@@ -56,6 +56,14 @@ namespace Supplier.Controllers
             ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Name");
             return View();
         }
+        public IActionResult CreateWithCategoryId(int id)
+        {
+            var x = new CategoryProduct();
+            x.CategoryId = id;
+            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Name");
+            return View(x);
+        }
+       
 
         // POST: CategoryProducts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
@@ -74,7 +82,41 @@ namespace Supplier.Controllers
             ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id", categoryProduct.ProductId);
             return View(categoryProduct);
         }
+        /*
+         * 
+         * 
+         * 
+         * 
+         * 
+         */
+          // POST: CategoryProducts/CreateWithCategoryId
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateWithCategoryId([Bind("CategoryId,ProductId")] CategoryProduct categoryProduct)
+        {
 
+            if (ModelState.IsValid)
+            {
+                categoryProduct.ProductId = 0;
+                _context.Add(categoryProduct);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Id", categoryProduct.CategoryId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id", categoryProduct.ProductId);
+            return View(categoryProduct);
+        }
+
+         /* 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * */
         // GET: CategoryProducts/Edit/5
         public async Task<IActionResult> Edit(int CategoryId , int ProductId)
         {
