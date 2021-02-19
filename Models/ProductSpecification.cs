@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Supplier.Models
 {
-    public class ProductSpecification 
+    public class ProductSpecification : BaseEntity
     {
         public int Id { get; set; }
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Supplier.Models
 {
-    public class Image 
+    public class Image : BaseEntity
     {
         [Key]
         public int ID { get; set; }

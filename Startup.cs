@@ -29,7 +29,7 @@ namespace Supplier
         {
             services.AddControllersWithViews();
             services.AddDbContext<SupplierDbContext>(options => 
-                                                    options.UseSqlServer(Configuration.GetConnectionString("SupplierConnction")));
+                                                    options.UseSqlServer(Configuration.GetConnectionString("SupplierConnection")));
             services.AddScoped<ICategoryServices, CategoryService>();
             services.AddRazorPages();
         
