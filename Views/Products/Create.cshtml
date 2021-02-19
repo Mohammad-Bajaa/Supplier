@@ -4,24 +4,24 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/NavbarAdmin.cshtml";}
 
-<h1>Create</h1>
+    <h4>Creating new Product</h4>
 
-<h4>Product</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input required asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input required asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input required asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            
             <div class="form-group">
                 <label asp-for="ProductionDate" class="control-label"></label>
                 <input  required asp-for="ProductionDate" class="form-control" />

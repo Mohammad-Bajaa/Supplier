@@ -52,8 +52,8 @@ namespace Supplier.Controllers
         // GET: Specifications/Create
         public IActionResult Create()
         {
-            ViewData["CategorySpecificationId"] = new SelectList(_context.CategorySpecifications, "Id", "Id");
-            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id");
+            ViewData["CategorySpecificationId"] = new SelectList(_context.CategorySpecifications, "Id", "Name");
+            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Name");
             return View();
         }
 
@@ -70,8 +70,8 @@ namespace Supplier.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategorySpecificationId"] = new SelectList(_context.CategorySpecifications, "Id", "Id", specification.CategorySpecificationId);
-            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id", specification.ProductId);
+            ViewData["CategorySpecificationId"] = new SelectList(_context.CategorySpecifications, "Id", "Name", specification.CategorySpecificationId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Name", specification.ProductId);
             return View(specification);
         }
 
@@ -88,8 +88,8 @@ namespace Supplier.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategorySpecificationId"] = new SelectList(_context.CategorySpecifications, "Id", "Id", specification.CategorySpecificationId);
-            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id", specification.ProductId);
+            ViewData["CategorySpecificationId"] = new SelectList(_context.CategorySpecifications, "Id", "Name", specification.CategorySpecificationId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Name", specification.ProductId);
             return View(specification);
         }
 
